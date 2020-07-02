@@ -1,0 +1,76 @@
+.login-container{
+  margin:auto;
+  padding:100px 0px 100px 0px;
+}
+.login-container .login-box{
+text-align:center;
+margin:auto;
+}
+.login-container h1{
+  text-align: center;
+  color:red;
+  font-weight: lighter;
+  font-size:20px;
+
+}
+.login-box{
+  width:33%;
+  height:300px;
+  border:1px solid #ADD8E6;
+  background: #F8F8F8;
+}
+.login-box input{
+  display: block;
+  margin: 20px 10px 20px 10px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  border:none;
+  height:40px;
+  width:80%;
+  pading:10px 10px 10px 10px;
+  border-left: 4px solid brown;
+}
+.login-box input[type=submit]{
+  background: blue;
+  color: white;
+  border:none;
+  font-weight: bolder;
+  font-size: large;
+}
+.login-box p{
+  color:purple;
+  font-weight: lighter;
+  margin:30px;
+}
+/* css for form*/
+.column {
+  float: left;
+  width: 50%;
+}
+.form-container{
+  width:95%;
+  height:400px;
+  margin:auto;
+  border:1px solid #ADD8E6;
+  background: #F8F8F8;
+}
+.form-container input,select {
+  border:1px solid lightgrey;
+  height:20px;
+  border-left: 4px solid brown;
+  border-radius: 4px;
+}
+.form-container select{
+  width:100%;
+}
+.form-container label{
+  font-family: sans-serif,Courier,monospace;
+}
+.form-container td{
+  padding:10px 5px 10px 0px;
+  text-align: left;
+}
+.form-container p{
+  color:purple;
+}

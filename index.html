@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <link rel="stylesheet" href="index.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+
+  <!-- Login Module -->
+  <div class="login-container">
+
+    <h1>APPLICATION TITLE</h1>
+
+    <div class="login-box">
+        <p>LOGIN TO CONTINUE</p>
+        <input type="text" name="login" value="" placeholder="Username">
+        <input type="password" name="password" value="" placeholder="Password">
+        <input type="submit" name="submit" value="LOGIN">
+    </div>
+  </div>
+
+  <!-- Table Module -->
+  <div class="table-container">
+    <table class="mytable">
+      <thead>
+      <tr>
+    <th>Request ID</th>
+    <th>Project Name</th>
+    <th>Project Manager</th>
+    <th>Resources</th>
+    <th>Designation</th>
+    <th>Status</th>
+    <th>Point of Contact</th>
+    <th>Hiring Status</th>
+    <th>HR Comments</th>
+    <th>Actions</th>
+  </tr>
+
+</thead>
+<tbody>
+
+</tbody>
+</table>
+  </div>
+
+  <!-- Details Module -->
+  <div class="details-container">
+    <table class="form">
+
+    </table>
+  </div>
+
+  <!-- Form Module -->
+  <div class="form-container">
+  <form class="form-1" action="index.html" method="post">
+      <!-- column-1 for form-->
+      <div class="column col-1">
+
+        <table>
+          <tr>
+            <td>
+              <label for="Projectname">Project Name</label>
+            </td>
+            <td>:</td>
+            <td class="input">
+              <select class="" name="Projectname">
+                <option value="0">---</option>
+                <option value="Project-1">Project-1</option>
+                <option value="Project-2">Project-2</option>
+                <option value="Project-3">Project-3</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="Projectmanager">Project Manager</label>
+            </td>
+            <td>:</td>
+            <td>
+              <input type="text" name="Projectmanager" value="">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="Resources">#Resources</label>
+            </td>
+            <td>:</td>
+            <td>
+              <input type="number" name="Resources" value="">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="Designation">Designation</label>
+            </td>
+            <td>:</td>
+            <td>
+              <input type="text" name="Designation" value="">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="Status">Status</label>
+            </td>
+            <td>:</td>
+            <td class="input">
+              <select class="" name="Status">
+                <option value="open">Open</option>
+                <option value="closed">Closed</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="minexperience">Min. Experience</label>
+            </td>
+            <td>:</td>
+            <td>
+              <input type="number" name="minexperience" value="">
+            </td>
+            <td>years</td>
+            <td>
+              <input type="number" name="minexperience" value="">
+            </td>
+            <td>months</td>
+          </tr>
+          <tr>
+            <td>
+              <label for="maxexperience">Min. Experience</label>
+            </td>
+            <td>:</td>
+            <td>
+              <input type="number" name="maxexperience" value="">
+            </td>
+            <td>years</td>
+            <td>
+              <input type="number" name="maxexperience" value="">
+            </td>
+            <td>months</td>
+          </tr>
+          <tr>
+            <td>
+              <label for="type">Type</label>
+            </td>
+            <td>:</td>
+            <td class="input">
+              <select class="" name="Status">
+                <option value="New">New</option>
+                <option value="Replacement">Replacement</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="Skills">Skills</label>
+            </td>
+            <td>:</td>
+            <td>
+              <input type="text" name="Skills" value="">
+            </td>
+          </tr>
+
+        </table>
+      <!-- column-2 of form-->
+      </div>
+      <div class="column col-2">
+        <table>
+          <tr>
+            <td>
+              <label for="Duration">Duration</label>
+            </td>
+            <td>:</td>
+            <td>
+              <input type="number" name="Duration" value="">
+            </td>
+            <td>years</td>
+            <td>
+              <input type="number" name="Duration" value="">
+            </td>
+            <td>months</td>
+          </tr>
+          <tr>
+            <td>
+              <label for="proc">Probability</label>
+            </td>
+            <td>:</td>
+            <td>
+              <input type="number" name="poc" value="">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="Salary">Salary</label>
+            </td>
+            <td>:</td>
+            <td>
+              <input type="number" name="Salary" value="">
+            </td>
+            <td>
+                -
+            </td>
+            <td>
+              <input type="number" name="Salary" value="">
+            </td>
+          </tr>
+          </table>
+          <p>HR FIELDS</p>
+          <table>
+            <tr>
+              <td>
+                <label for="poc">Point of Contact</label>
+              </td>
+              <td>:</td>
+              <td>
+                <input type="text" name="poc" value="">
+              </td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>
+                <label for="Hstatus">Hiring Status</label>
+              </td>
+              <td>:</td>
+              <td>
+                <input type="text" name="Hstatus" value="">
+              </td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>
+                <label for="HComments">HR Comments</label>
+              </td>
+              <td>:</td>
+              <td>
+                <input type="text" name="HComments" value="">
+              </td>
+              <td></td>
+              <td></td>
+            </tr>
+          </table>
+      </div>
+  </form>
+  </div>
+
+
+</body>
+
+</html>
