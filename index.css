@@ -74,3 +74,55 @@ margin:auto;
 .form-container p{
   color:purple;
 }
+/* css for table */
+.table-container{
+  margin-bottom:20px;
+  margin-top: 20px;
+}
+.mytable{
+  border-collapse: collapse;
+  margin: auto;
+}
+.mytable th{
+  background-color: #00BFFF	;
+  color:white;
+  padding:10px 5px 10px 5px;
+  border:1px solid white;
+  width:10%;
+}
+.mytable td{
+  border:1px solid white;
+  text-align: center;
+}
+.table-container tr:nth-child(even) {background-color: lightgrey;}
+/*css for details*/
+.details-container{
+  width:95%;
+  height:400px;
+  margin:auto;
+  border:1px solid #ADD8E6;
+  background: #F8F8F8;
+}
+.details-container input,select {
+  border:1px solid lightgrey;
+  height:20px;
+  border-left: 4px solid brown;
+  border-radius: 4px;
+}
+.details-container select{
+  width:100%;
+}
+.details-container label{
+  font-family: sans-serif,Courier,monospace;
+}
+.details-container td{
+  padding:10px 0px 10px 0px;
+  text-align: left;
+}
+.details-container p{
+  color:purple;
+}
+.details-container{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}

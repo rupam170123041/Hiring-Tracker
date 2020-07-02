@@ -6,12 +6,13 @@
   <title></title>
   <link rel="stylesheet" href="index.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script  src="index.js"></script>
 </head>
 
 <body>
 
   <!-- Login Module -->
-  <div class="login-container">
+  <div class="login-container container hidden">
 
     <h1>APPLICATION TITLE</h1>
 
@@ -24,7 +25,7 @@
   </div>
 
   <!-- Table Module -->
-  <div class="table-container">
+  <div class="table-container container hidden">
     <table class="mytable">
       <thead>
       <tr>
@@ -48,14 +49,187 @@
   </div>
 
   <!-- Details Module -->
-  <div class="details-container">
-    <table class="form">
+  <div class="details-container container hidden">
+    <div class="column col-3">
 
-    </table>
+      <table>
+        <tr>
+          <td>
+            <label for="Projectname">Project Name</label>
+          </td>
+          <td>:</td>
+          <td>
+          Project-1
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="Projectmanager">Project Manager</label>
+          </td>
+          <td>:</td>
+          <td>
+            Manager-1
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="Resources">#Resources</label>
+          </td>
+          <td>:</td>
+          <td>
+            5
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="Designation">Designation</label>
+          </td>
+          <td>:</td>
+          <td>
+            D-1
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="Status">Status</label>
+          </td>
+          <td>:</td>
+          <td class="input">
+            Open
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="minexperience">Min. Experience</label>
+          </td>
+          <td>:</td>
+          <td>
+            1
+          </td>
+          <td>years</td>
+          <td>
+            6
+          </td>
+          <td>months</td>
+        </tr>
+        <tr>
+          <td>
+            <label for="maxexperience">Min. Experience</label>
+          </td>
+          <td>:</td>
+          <td id="maxexp">
+            2
+          </td>
+          <td>years</td>
+          <td>
+            3
+          </td>
+          <td>months</td>
+        </tr>
+        <tr>
+          <td>
+            <label for="type">Type</label>
+          </td>
+          <td>:</td>
+          <td class="input">
+          New
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="Skills">Skills</label>
+          </td>
+          <td>:</td>
+          <td>
+            C++,Javascript,MongoDB
+          </td>
+        </tr>
+
+      </table>
+    <!-- column-2 of form-->
+    </div>
+    <div class="column col-4">
+      <table>
+        <tr>
+          <td>
+            <label for="Duration">Duration</label>
+          </td>
+          <td>:</td>
+          <td>
+          3
+          </td>
+          <td>years</td>
+          <td>
+            4
+          </td>
+          <td>months</td>
+        </tr>
+        <tr>
+          <td>
+            <label for="proc">Probability</label>
+          </td>
+          <td>:</td>
+          <td>
+          60%
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="Salary">Salary</label>
+          </td>
+          <td>:</td>
+          <td>
+          0
+          </td>
+          <td>
+              -
+          </td>
+          <td>
+          0
+          </td>
+        </tr>
+        </table>
+        <p>HR FIELDS</p>
+        <table>
+          <tr>
+            <td>
+              <label for="poc">Point of Contact</label>
+            </td>
+            <td>:</td>
+            <td>
+            HR-1
+            </td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>
+              <label for="Hstatus">Hiring Status</label>
+            </td>
+            <td>:</td>
+            <td>
+            OK
+            </td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>
+              <label for="HComments">HR Comments</label>
+            </td>
+            <td>:</td>
+            <td>
+              No comments
+            </td>
+            <td></td>
+            <td></td>
+          </tr>
+        </table>
+    </div>
   </div>
 
   <!-- Form Module -->
-  <div class="form-container">
+  <div class="form-container container hidden">
   <form class="form-1" action="index.html" method="post">
       <!-- column-1 for form-->
       <div class="column col-1">
@@ -247,7 +421,6 @@
       </div>
   </form>
   </div>
-
 
 </body>
 
