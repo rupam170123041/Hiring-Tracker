@@ -1,8 +1,9 @@
 $(document).ready(function(){
-//  $(".container").hide();
-//  $(".login-container").show();
-//  $(".table-container").show();
   appendrow();
+  //showLogin();
+  //showTable();
+  //showDetails();
+  //showForm();
 })
 var data = [
   {
@@ -39,4 +40,23 @@ function appendrow(){
     txt=txt+"</tr>";
     $(".mytable tbody").append(txt);
   }
-}
+};
+function showLogin(){
+  $(".container").hide();
+  $(".login-container").show();
+};
+function showTable(){
+  $(".container").hide();
+  $(".table-container").show();
+};
+function showDetails(){
+  $(".container").hide();
+  $(".details-container").show();
+};
+function showForm(){
+  $(".container").hide();
+  $(".form-container").show();
+};
+function hideAll(){
+  $(".container").hide();
+};
