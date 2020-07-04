@@ -1,10 +1,9 @@
 $(document).ready(function(){
-  appendrow();
-  //showLogin();
+  showLogin();
   //showTable();
   //showDetails();
   //showForm();
-})
+});
 var data = [
   {
     requestId: 1,
@@ -36,17 +35,26 @@ function appendrow(){
   {
     var txt="<tr>";
     for(let j=0;j<Object.keys(data[i]).length;j++)
-    txt=txt+"<td>"+String(data[i][Object.keys(data[i])[j]])+"</td>";
-    txt=txt+"</tr>";
+    {
+      txt=txt+"<td>"+String(data[i][Object.keys(data[i])[j]])+"</td>";
+    }
+      txt=txt+"</tr>";
     $(".mytable tbody").append(txt);
   }
+
 };
 function showLogin(){
   $(".container").hide();
   $(".login-container").show();
 };
+//function editDetails(e){
+//	var $req = $(e.target);
+//	var reqId = $req.attr("id");
+//	console.log("request Id: " + reqId);
+//};
 function showTable(){
   $(".container").hide();
+  appendrow();
   $(".table-container").show();
 };
 function showDetails(){
@@ -60,3 +68,41 @@ function showForm(){
 function hideAll(){
   $(".container").hide();
 };
+function loginSubmit(e){
+	var username = $('#username').val();
+	var password = $('#password').val();
+
+	if (username == 'admin-man' && password == 'admin-man') {
+    e.preventDefault();
+    showTable();
+		sessionStorage.setItem("isManager", "true");
+		sessionStorage.setItem("username", "admin-man");
+		sessionStorage.setItem("password", "admin-man");
+	}
+	else if(username == 'admin-hr' && password == 'admin-hr'){
+    e.preventDefault();
+    showTable();
+		sessionStorage.setItem("isHR", "true");
+		sessionStorage.setItem("username", "admin-hr");
+		sessionStorage.setItem("password", "admin-hr")
+	}
+  else {
+    showLogin();
+  }
+};
+
+
+function isLoggedIn(){
+	return (sessionStorage.getItem("username") == "admin-man" && sessionStorage.getItem("password") == "admin-man") || (sessionStorage.getItem("username") == "admin-hr" && sessionStorage.getItem("password") == "admin-hr");
+};
+
+$(document).on('click', '#login', loginSubmit);
+
+$(function(){
+	if(isLoggedIn()){
+		showTable();
+	}
+	else{
+		showLogin();
+	}
+});

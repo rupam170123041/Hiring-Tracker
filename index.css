@@ -43,43 +43,7 @@ margin:auto;
   font-weight: lighter;
   margin:30px;
 }
-/* css for form*/
-.column {
-  float: left;
-  width: 50%;
-}
-.form-container{
-  width:95%;
-  height:500px;
-  margin:auto;
-  border:1px solid #ADD8E6;
-  background: #F8F8F8;
-}
-.form-container input,select {
-  border:1px solid lightgrey;
-  height:20px;
-  border-left: 4px solid brown;
-  border-radius: 4px;
-}
-.form-container select{
-  width:100%;
-}
-.form-container label{
-  font-family: sans-serif,Courier,monospace;
-}
-.form-container td{
-  padding:10px 5px 10px 0px;
-  text-align: left;
-}
-.form-container p{
-  color:purple;
-}
-#para{
-  text-align: center;
-  font-size: 20px;
-  color: black;
-}
-/* css for table */
+/*css for table*/
 .table-container{
   margin-bottom:20px;
   margin-top: 20px;
@@ -94,46 +58,26 @@ margin:auto;
   color:white;
   padding:10px 5px 10px 5px;
   border:1px solid white;
-  width:10%;
 }
 .mytable td{
   border:1px solid white;
   text-align: center;
 }
 .table-container tr:nth-child(even) {background-color: lightgrey;}
+/* css for form*/
+.form-container{
+  background: #F8F8F8;
+  height:580px;
+}
+.form-control{
+border-left:5px solid brown;
+}
+.form-container p,.details-container p{
+  margin-bottom:-20px;
+}
 /*css for details*/
 .details-container{
-  width:95%;
-  height:500px;
-  margin:auto;
-  border:1px solid #ADD8E6;
+  width:75%;
   background: #F8F8F8;
-}
-.details-container input,select {
-  border:1px solid lightgrey;
-  height:20px;
-  border-left: 4px solid brown;
-  border-radius: 4px;
-}
-.details-container select{
-  width:100%;
-}
-.details-container label{
-  font-family: sans-serif,Courier,monospace;
-}
-.details-container td{
-  padding:10px 0px 10px 0px;
-  text-align: left;
-}
-.details-container p{
-  color:purple;
-}
-.details-container{
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-#para-1{
-  text-align: center;
-  font-size: 20px;
-  color: black;
+  margin-bottom:20px;
 }
