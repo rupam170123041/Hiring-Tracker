@@ -26,7 +26,7 @@ var data = [
     status:"open",
     Pointofcontact:"HR-1",
     Hiringstatus:"completed",
-    HRComments:"ok",
+    HRComments:"no comments",
     Actions:"done"
   },
   {
@@ -42,17 +42,19 @@ var data = [
     Actions:"done"
   }
 ];
-//function editDetails(e){
-//    var $req = $(e.target);
-//    var reqId = $req.attr("id");
+function editDetails(e){
 
+    var $req = $(e.target);
+    var reqId = $req.attr("id")
+    var trnew="<tr><td colspan='10'>"+$(".details-container").html()+"</td></tr>";
+    $(trnew).insertAfter($req.closest('tr'));
 
     //var reqObj = data.filter(o => o.requestId == reqId);
     //console.log({ details: reqObj });
 
     // Add a new row (details module) below the selected row in the table.
 
-//  };
+  };
 function appendrow(){
   for(let i=0;i<data.length;i++)
   {
@@ -64,20 +66,15 @@ function appendrow(){
     txt=txt+'<td id="'+String(data[i]["requestId"])+'" class="edit-action"><i class="fa fa-bars" aria-hidden="true"></i></td>'
       txt=txt+"</tr>";
     $(".mytable tbody").append(txt);
-
   }
-  $(".edit-action").click(editDetails);
+  $(document).on('click', '.edit-action', editDetails);
 
 };
 function showLogin(){
   $(".module").hide();
   $(".login-container").show();
 };
-function editDetails(e){
-	var $req = $(e.target);
-	var reqId = $req.attr("id");
-	var newrow
-};
+
 function showTable(){
   $(".module").hide();
   appendrow();
