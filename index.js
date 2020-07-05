@@ -42,17 +42,17 @@ var data = [
     Actions:"done"
   }
 ];
-function editDetails(e){
-    var $req = $(e.target);
-    var reqId = $req.attr("id");
-    
+//function editDetails(e){
+//    var $req = $(e.target);
+//    var reqId = $req.attr("id");
+
 
     //var reqObj = data.filter(o => o.requestId == reqId);
     //console.log({ details: reqObj });
 
     // Add a new row (details module) below the selected row in the table.
 
-  };
+//  };
 function appendrow(){
   for(let i=0;i<data.length;i++)
   {
