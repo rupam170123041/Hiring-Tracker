@@ -45,7 +45,7 @@ var data = [
 function editDetails(e){
     var $req = $(e.target);
     var reqId = $req.attr("id");
-    console.log("request id: " +  reqId);
+    
 
     //var reqObj = data.filter(o => o.requestId == reqId);
     //console.log({ details: reqObj });
@@ -70,29 +70,29 @@ function appendrow(){
 
 };
 function showLogin(){
-  $(".container").hide();
+  $(".module").hide();
   $(".login-container").show();
 };
-//function editDetails(e){
-//	var $req = $(e.target);
-//	var reqId = $req.attr("id");
-//	console.log("request Id: " + reqId);
-//};
+function editDetails(e){
+	var $req = $(e.target);
+	var reqId = $req.attr("id");
+	var newrow
+};
 function showTable(){
-  $(".container").hide();
+  $(".module").hide();
   appendrow();
   $(".table-container").show();
 };
 function showDetails(){
-  $(".container").hide();
+  $(".module").hide();
   $(".details-container").show();
 };
 function showForm(){
-  $(".container").hide();
+  $(".module").hide();
   $(".form-container").show();
 };
 function hideAll(){
-  $(".container").hide();
+  $(".module").hide();
 };
 function loginSubmit(e){
 	var username = $('#username').val();
@@ -132,3 +132,4 @@ $(function(){
 		showLogin();
 	}
 });
+$(document).on('click', '#new-request', showForm);

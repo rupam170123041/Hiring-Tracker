@@ -44,12 +44,23 @@ margin:auto;
   margin:30px;
 }
 /*css for table*/
+.table-container p{
+  text-align: right;
+  padding-right:180px;
+  margin-bottom: 5px;
+
+}
+.table-container button{
+  background:#7F00FF;
+  color:white;
+  font-family: Arial;
+}
 .table-container{
   margin-bottom:20px;
   margin-top: 20px;
   margin:auto;
   padding-top:30px;
-  
+
 }
 .mytable{
   border-collapse: collapse;
@@ -70,6 +81,9 @@ margin:auto;
 .form-container{
   background: #F8F8F8;
   height:580px;
+  margin-left:40px;
+  margin-right:40px;
+
 }
 .form-control{
 border-left:5px solid brown;
