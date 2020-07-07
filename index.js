@@ -42,19 +42,32 @@ var data = [
     Actions:"done"
   }
 ];
+
 function editDetails(e){
 
-    var $req = $(e.target);
-    var reqId = $req.attr("id")
-    var trnew="<tr><td colspan='10'>"+$(".details-container").html()+"</td></tr>";
-    $(trnew).insertAfter($req.closest('tr'));
-
-    //var reqObj = data.filter(o => o.requestId == reqId);
-    //console.log({ details: reqObj });
+    var $td = $(e.target).closest('td');
+    var reqId = $td.attr("id");
+    handleIcons($td);
+    var trnew="<tr ><td id='new' colspan='10'>"+$(".details-container").html()+"</td></tr>";
+    $(trnew).insertAfter($td.closest('tr'));
+    $td.find('i.close-action').click(function(){$("#new").closest('td').closest('tr').remove();$td.find('i.close-action').hide();$td.find('i.edit-action').show();});
+    var reqObj = data.filter(o => o.requestId == reqId);
+    console.log({ details: reqObj });
 
     // Add a new row (details module) below the selected row in the table.
 
   };
+function handleIcons($td) {
+  if($("#" + "new").length != 0) {
+  $("#new").closest('td').closest('tr').remove();
+};
+    var $table = $td.closest('table')
+    $table.find('i.edit-action').show();
+    $table.find('i.close-action').hide();
+
+    $td.find('i.close-action').show();
+    $td.find('i.edit-action').hide();
+  }
 function appendrow(){
   for(let i=0;i<data.length;i++)
   {
@@ -63,12 +76,12 @@ function appendrow(){
     {
       txt=txt+"<td>"+String(data[i][Object.keys(data[i])[j]])+"</td>";
     }
-    txt=txt+'<td id="'+String(data[i]["requestId"])+'" class="edit-action"><i class="fa fa-bars" aria-hidden="true"></i></td>'
+    txt=txt+'<td id="'+String(data[i]["requestId"])+'"><i class="fa fa-bars edit-action" aria-hidden="true"></i><i class="fa fa-times close-action" aria-hidden="true"></i></td>'
       txt=txt+"</tr>";
     $(".mytable tbody").append(txt);
   }
-  $(document).on('click', '.edit-action', editDetails);
-
+  $(".mytable tbody").find('td i.close-action').hide();
+  $(".mytable tbody").find('td i.edit-action').click(editDetails);
 };
 function showLogin(){
   $(".module").hide();
