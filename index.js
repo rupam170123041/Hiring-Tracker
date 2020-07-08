@@ -100,7 +100,7 @@ function showDetails(){
 function showForm(){
   $(".module").hide();
   $(".form-container").show();
-  $("#form-submit").click(showTable);
+  $("#form-submit").click(function(){$(".module").hide();$(".table-container").show();});
 };
 function hideAll(){
   $(".module").hide();
