@@ -144,3 +144,4 @@ $(function(){
 	}
 });
 $(document).on('click', '#new-request', showForm);
+$("#form-submit").click(function(){$(".module").hide();$(".table-container").show();};
