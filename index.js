@@ -100,6 +100,7 @@ function showDetails(){
 function showForm(){
   $(".module").hide();
   $(".form-container").show();
+  $("#form-submit").click(showTable);
 };
 function hideAll(){
   $(".module").hide();
