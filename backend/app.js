@@ -130,7 +130,7 @@ app.get("/api/getRequestDetails", (req, res, next) => {
     }
     else {
 
-      res.json({"status": "success"});
+      res.json({result});
       console.log(result);
     }
   });
@@ -165,7 +165,7 @@ app.put("/api/updateRequest", (req, res, next) => {
   var newReq = req.body;
   var sql_update = `UPDATE hiring_tracker.hiring_requests
                     SET hiring_requests.projectname = '${newReq.projectname}', hiring_requests.projectmanager = '${newReq.projectmanager}'
-                    WHERE hiring_requests.id = '${newReq.requestId}'`;
+                    WHERE hiring_requests.requestId = '${newReq.requestId}'`;
 
   con.query(sql_update, function( err, result){
     if (err) {

@@ -5,44 +5,45 @@ $(document).ready(function(){
   //showForm();
 });
 var reqObj;
-var data = [
-  {
-    requestId: 1,
-    projectName: "Project-1",
-    projectManager: "Man-1",
-    resources:4,
-    Designation:"d-1",
-    status:"open",
-    Pointofcontact:"HR-1",
-    Hiringstatus:"completed",
-    HRComments:"ok",
-    Actions:"done"
-  },
-  {
-    requestId: 2,
-    projectName: "Project-2",
-    projectManager: "Man-2",
-    resources:6,
-    Designation:"d-2",
-    status:"open",
-    Pointofcontact:"HR-1",
-    Hiringstatus:"completed",
-    HRComments:"no comments",
-    Actions:"done"
-  },
-  {
-    requestId: 3,
-    projectName: "Project-3",
-    projectManager: "Man-3",
-    resources:13,
-    Designation:"d-3",
-    status:"open",
-    Pointofcontact:"HR-1",
-    Hiringstatus:"completed",
-    HRComments:"ok",
-    Actions:"done"
-  }
-];
+var data=[];
+//= [
+//  {
+//    requestId: 1,
+//    projectName: "Project-1",
+//    projectManager: "Man-1",
+//    resources:4,
+//    Designation:"d-1",
+//    status:"open",
+//    Pointofcontact:"HR-1",
+//    Hiringstatus:"completed",
+//    HRComments:"ok",
+//    Actions:"done"
+//  },
+//  {
+//    requestId: 2,
+//    projectName: "Project-2",
+//    projectManager: "Man-2",
+//    resources:6,
+//    Designation:"d-2",
+//    status:"open",
+//    Pointofcontact:"HR-1",
+//    Hiringstatus:"completed",
+//    HRComments:"no comments",
+//    Actions:"done"
+//  },
+//  {
+//    requestId: 3,
+//    projectName: "Project-3",
+//    projectManager: "Man-3",
+//    resources:13,
+//    Designation:"d-3",
+//    status:"open",
+//    Pointofcontact:"HR-1",
+//    Hiringstatus:"completed",
+//    HRComments:"ok",
+//    Actions:"done"
+//  }
+//];
 
 function showFormprefill(){
   $(".module").hide();
@@ -82,10 +83,15 @@ function appendrow(){
   for(let i=0;i<data.length;i++)
   {
     var txt="<tr>";
-    for(let j=0;j<Object.keys(data[i]).length-1;j++)
-    {
-      txt=txt+"<td>"+String(data[i][Object.keys(data[i])[j]])+"</td>";
-    }
+    txt=txt+"<td>"+String(data[i]['requestId'])+"</td>";
+    txt=txt+"<td>"+String(data[i]['projectname'])+"</td>";
+    txt=txt+"<td>"+String(data[i]['projectmanager'])+"</td>";
+    txt=txt+"<td>"+String(data[i]['resources'])+"</td>";
+    txt=txt+"<td>"+String(data[i]['designation'])+"</td>";
+    txt=txt+"<td>"+String(data[i]['status'])+"</td>";
+    txt=txt+"<td>"+String(data[i]['poc'])+"</td>";
+    txt=txt+"<td>"+String(data[i]['hiring_status'])+"</td>";
+    txt=txt+"<td>"+String(data[i]['hr_comments'])+"</td>";
     txt=txt+'<td id="'+String(data[i]["requestId"])+'"><i class="fa fa-bars edit-action" aria-hidden="true"></i><i class="fa fa-times close-action" aria-hidden="true"></i></td>'
       txt=txt+"</tr>";
     $(".mytable tbody").append(txt);
@@ -117,20 +123,14 @@ function hideAll(){
 function loginSubmit(e){
 	var username = $('#username').val();
 	var password = $('#password').val();
+  var validated = authenticate({"username": username,"password":password});
 
-	if (username == 'admin-man' && password == 'admin-man') {
+	if (validated) {
     e.preventDefault();
     showTable();
 		sessionStorage.setItem("isManager", "true");
 		sessionStorage.setItem("username", "admin-man");
 		sessionStorage.setItem("password", "admin-man");
-	}
-	else if(username == 'admin-hr' && password == 'admin-hr'){
-    e.preventDefault();
-    showTable();
-		sessionStorage.setItem("isHR", "true");
-		sessionStorage.setItem("username", "admin-hr");
-		sessionStorage.setItem("password", "admin-hr")
 	}
   else {
     showLogin();
@@ -153,3 +153,70 @@ $(function(){
 	}
 });
 $(document).on('click', '#new-request', showForm);
+function authenticate(data){
+   var result;
+  $.ajax({
+      "url": "http://localhost:3000/api/authenticate",
+      "method": "POST",
+      "timeout": 0,
+      "async":false,
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "data": JSON.stringify(data),
+    })
+    .done(function (response) {
+      console.log(response);
+      result=response.status=='success';
+    });
+    return result;
+};
+authenticate({"username":"admin-man","password":"admin-man"});
+//function addRequest(data){
+//  $.ajax({
+//      "url": "http://localhost:3000/api/addRequest",
+//      "method": "POST",
+//      "timeout": 0,
+//      "headers": {
+//        "Content-Type": "application/json"
+//      },
+//      "data": JSON.stringify(data),
+//    })
+//    .done(function (response) {
+//      console.log(response);
+//    });
+//}
+//addRequest({"projectname":"Proj-1","projectmanager":"Man-2232"});
+
+function getRequests(){
+  $.ajax({
+      "url": "http://localhost:3000/api/getRequestDetails",
+      "method": "GET",
+      "async":false,
+      "timeout": 0,
+      "headers": {
+        "Content-Type": "application/json"
+      },
+    })
+    .done(function (response) {
+      data = response.result;
+      console.log(data);
+    });
+}
+getRequests();
+
+//function updateRequests(data){
+//  $.ajax({
+//      "url": "http://localhost:3000/api/updateRequest",
+//      "method": "PUT",
+//      "timeout": 0,
+//      "headers": {
+//        "Content-Type": "application/json"
+//      },
+//      "data": JSON.stringify(data),
+//    })
+//    .done(function (response) {
+//      console.log(response);
+//    });
+//}
+//updateRequests({"requestId": "3", "projectname": "Proj-1" ,"projectmanager": "Man-333"});
